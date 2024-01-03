@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Set up email parameters
-    $to = "your_email@example.com"; // Replace with your email address
+    $to = "email@okmarketing.xyz"; // Replace with your email address
     $subject = "New Form Submission";
     $message = "Site: $site\nEmail: $email";
 
