@@ -1,19 +1,27 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $site = $_POST["site"];
+    $email = $_POST["email"];
 
-// Obtenemos los datos del formulario
-$correo_remitente = $_POST['email'];
-$mensaje = $_POST['site'];
+    // Validate data (you can add more validation as needed)
+    if (empty($site) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Error: Invalid input. Please fill in all fields correctly.";
+        exit;
+    }
 
-//encode email
+    // Set up email parameters
+    $to = "your_email@example.com"; // Replace with your email address
+    $subject = "New Form Submission";
+    $message = "Site: $site\nEmail: $email";
 
-$email = "email@okmarketing.xyz";
-$enconde_email = base64_encode($email);
-
-// Enviamos el correo electrónico
-mail($enconde_email, "SEO score for: $mensaje", "From: $correo_remitente");
-
-// Mostramos un mensaje de confirmación
-echo "Gran paso! enviaste tu website para evaluación. Te responderemos en breve <a href='#'> Regresar </a> ";
-
+    // Send email
+    if (mail($to, $subject, $message)) {
+        echo "Success: Form submitted successfully!";
+    } else {
+        echo "Error: Unable to submit the form. Please try again later.";
+    }
+} else {
+    echo "Error: Invalid request.";
+}
 ?>
-
