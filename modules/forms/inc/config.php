@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'action' => 'http://localhost/crum.sensor.lab/modules/forms/submit.php',
+    'action' => 'https://okmarketing.xyz/modules/forms/submit.php',
     'forms' => array(
         'mailchimp' => array(
             'inputs_allowed'   => array( 'email' ),
