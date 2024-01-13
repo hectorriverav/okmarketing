@@ -20,7 +20,7 @@ class Crumina_Submit {
     public function __construct() {
         $this->config = require('inc/config.php');
 
-        // $this->getData();
+        $this->getData();
         $this->validateData();
 
         if ( $this->type === 'standard' ) {

@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'action' => 'https://okmarketing.xyz/modules/forms/submit.php',
+    'action' => '/modules/forms/submit.php',
     'forms' => array(
         'mailchimp' => array(
             'inputs_allowed'   => array( 'email' ),
@@ -11,10 +11,10 @@ return array(
             'list_id' => 'c5c23a0e79'
         ),
         'standard'  => array(
-            'email'           => 'email@okmarketing.xyz',
+            'email'           => 'lorem@ipsum.dolor',
             'email_subject'   => 'Mail from site',
-            'inputs_allowed'   => array( 'name', 'lastname', 'email', 'subject', 'message', 'site', 'company' ),
-            'inputs_required' => array( 'name', 'lastname', 'email', 'message', 'site' ),
+            'inputs_allowed'   => array( 'name', 'phone', 'email', 'subject', 'message', 'site' ),
+            'inputs_required' => array( 'name', 'email', 'message' ),
             'message_success' => 'Your message was successfully sent!',
         )
     )
